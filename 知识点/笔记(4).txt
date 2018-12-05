@@ -1,0 +1,54 @@
+vue-router有两种路由模式：
+1. hash模式  #/xxx/yyy/zzz
+2. history模式 /xxx/yyy/zzz
+原理：
+H5新特性：基于history pushState/replaceState新的API进行封装的。
+
+mint-ui：
+饿了么：
+http://mint-ui.github.io/#!/zh-cn
+
+1. 安装
+2. 引入必须的组件
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
+
+3. 使用插件
+Vue.use(MintUI)
+
+类似的UI库：
+http://element.eleme.io/#/zh-CN
+
+VUEX VUE框架的最高级知识点：
+20遍的问题即将产生。
+https://github.com/vuejs/vuex
+
+多组件共享的数据通常使用状态管理 VUEX(单向数据流)
+	action 做业务，调用mutations
+	mutation 用来接收数据并改变state 不能写异步处理。
+	state 用来存储数据的 本质是js变量。
+	getter 从state取出数据并过滤
+参考了react的redux
+
+什么时候使用vuex？
+	当数据需要在组件间共享的时候。
+
+git使用
+最初
+git clone 地址
+
+添加或修改文件
+git add .
+git commit -m "注释"
+git push
+
+注意点：
+每次修改文件之前首先要git pull, 减少发生merge的概率
+
+图形化工具：sourceTree
+
+-------------------------------------------
+重要！！！！！
+普通的function的指针是运行时指针。
+箭头函数的指针是声明时指针，且指针不能被修改。 不能通过call,apply,bind修正指针。
+

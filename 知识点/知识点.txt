@@ -1,0 +1,26 @@
+﻿1. 官方路由安装 https://router.vuejs.org/
+
+2. 路由基础  (   根据 不同路径 ，解析路径， 渲染不同组件显示 )
+
+
+	(1)开始
+	(2)动态路由匹配 (active-class)
+	(3)嵌套路由
+	(4)编程式导航(js跳转) vs 声明式导航<router-link>
+	(5)命名路由
+	(6)命名视图
+	(7)重定向和别名 
+		    {
+		    	path:"*",
+		    	redirect:"/home"
+		    }
+	(8)HTML5 History模式
+
+		vue支持两种模式
+
+		a.  hash   #/home
+		b.  history  /home
+   
+    (9)路由守卫&路由拦截
+    	a. 全局拦截
+    	b. 单个拦截

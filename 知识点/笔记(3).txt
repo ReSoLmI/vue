@@ -1,0 +1,53 @@
+#xxxx
+hash值
+
+vue-router动态传参！！！！！
+/path/:参数名
+
+获取参数
+this.$route.params.参数名
+
+路由的高级匹配模式：
+https://github.com/vuejs/vue-router/blob/next/examples/route-matching/app.js
+
+router-link标签相关：
+	exact代表路径的精确匹配
+	actvie-class激活状态的class
+	sense。合理推测的能力。
+
+
+组件的生命周期： !!!!!!
+1. beforeCreate
+2. created
+3. beforeMount 即将加载进dom
+4. mounted 已经加载进dom         初期从服务器取得数据在这个生命周期中执行
+5. beforeUpdate
+6. updated
+7. beforeDestroy
+8. destroyed 通常做清理操作，事件的解绑，清除定时器
+
+页面局部刷新之后会执行这个方法。
+this.$nextTick(function () {
+	// DOM 现在更新了
+	// `this` 绑定到当前实例
+	this.doSomethingElse()
+})
+
+
+移动端事件
+touchstart mousedown
+touchmove mousemove
+touchend mouseup
+坑：
+移动端的event信息都保存在了event.changedTouches这个数组里面了。
+
+touch比click快300ms
+touch.js绑定tap事件
+
+fastclick.js
+解决点击300ms延迟的问题。
+
+zepto.js
+相当于移动端JQ，使用方式基本上和JQ一样。
+http://www.zeptojs.cn/
+

@@ -1,0 +1,41 @@
+<div v-for="item in list">
+<div v-for="(item, index) in list"> index是下标。
+{{object["user-name"]}}
+
+<div v-for="item in list" v-if="item">
+	<span v-if="item.author">{{item.author.name}}</span> // 代码的健壮性
+</div>
+异常系测试
+
+
+项目组的人员组成：
+Project manager: PM
+Project leader: PL
+SE: senior eneger
+PG: programmer
+
+前后端比例 1:2-3
+产品经理： 一个产品只配一个产品经理
+UI： 
+
+微软office系列中有一个软件叫做project
+
+工程表，工程计划 schdule
+A页面 小王 1天 18日 100%
+B页面 小王 0.4天 19日 10%
+
+里程碑：mile stone
+检查点：check point
+
+页面工作量估算：
+WBS: 任务分解
+头部 0.5
+二级菜单 1
+轮播图 0.5
+秒杀 0.5
+排行榜 0.5
+N屏*10 3.3
+懒加载 2
+其他 1
+buffer余量
+

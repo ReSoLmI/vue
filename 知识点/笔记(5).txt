@@ -1,0 +1,37 @@
+1. 子路由
+
+2. 如何支持sass
+在style标签上写lang="scss"
+安装两个组件
+sass-loader node-sass
+
+3. css作用域
+如果style标签里面写了scoped，代表只针对当前组件生效。
+scoped的样式不能被覆盖。
+
+4. 编程式的导航
+无参数
+this.$router.push("usa");
+有参数
+this.$router.push({ name: 'Usa', params: { u_id: 10086 }});
+
+5. ajax提交数据的两种方式(后端决定用哪种方式，前端根据后端的要求来做)
+最常见的是表单方式（form）
+JQ的默认提交方式是表单方式。
+key=val&key2=value2
+
+另外一种方式是json方式。
+{
+	key: val,
+	key2: value2
+}
+
+6. webpack打包文件的时候，怎样能把小图片转成base64格式的
+
+使用url-loader： 关键词 url-loader和limit
+    test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+    loader: 'url-loader',
+    options: {
+      limit: 10000,
+      name: utils.assetsPath('img/[name].[hash:7].[ext]')
+    }

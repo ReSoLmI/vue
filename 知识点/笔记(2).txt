@@ -1,0 +1,103 @@
+http://lbsyun.baidu.com/
+地图四句话：
+http://lbsyun.baidu.com/index.php?title=jspopular/guide/helloworld
+
+定位：
+方式1：H5原生提供了定位功能。
+navigator.geolocation.getCurrentPosition
+注意点：所有h5隐私类API的调用必须使用https调用。或者本地调用(localhost)
+
+方式2：
+http://developer.baidu.com/map/jsdemo.htm#i8_1
+
+坐标逆转换（城市名取得）
+http://developer.baidu.com/map/jsdemo.htm#i7_2
+
+
+注意点：
+1. 组件中只能有一个顶层元素（react也是这样的）
+
+自定义事件：
+1. 调用组件外部实例的方法
+2. 向外传递参数
+
+Vue中面试题必问的问题：
+！！！非父子组件的通信
+回答：new一个空的vue对象，发送端用$emit触发并发送信息。接收端用$on接收。
+
+slot：占位，内容可替换。内容分发。
+
+动态组件：
+keep-alive:可以把组件的状态保留到内存中。缺点：当大量缓存组件的时候会造成内存消耗，导致页面卡顿。
+
+本地存储：
+webStorage H5新特性 存储的数据类型必须为字符串!!!!!!
+1. localStorage 永远存在。除非调用清空或删除方法才会消除掉。
+2. sessionStorage 会话级别。浏览器关闭自动清空。
+	localStorage.setItem(key, value)
+	localStorage.getItem(key)
+	localStorage.removeItem(key)
+	localStorage.clear // 危险行为，慎用。
+相关的面试题：
+和cookie比较。
+两者都可以存储信息。兼容性不同。cookie兼容性好。webStorage是H5新特性，所以不兼容IE8以下。
+cookie每次http请求都会自动发送给服务端。
+cookie最多存4k内容
+webStorage上限至少5兆
+
+大重点：
+webpack前端工程化
+脚手架：用来搭建项目的命令行工具。
+vue-cli
+1. 全局安装脚手架
+cnpm install -g vue-cli
+
+
+
+.vue文件是一个组件。
+template html表示层
+script js脚本
+style css
+
+ajax
+fetch h5原生的新的ajax API。
+axios 比较流行的ajax插件。
+	1.安装
+	cnpm install axios --save-dev
+	2. import引入
+	3. 按照文档说明使用
+	https://www.npmjs.com/package/axios
+
+VUE反向代理的配置：
+修改config/index.js文件，
+在proxyTable中添加如下信息：
+    proxyTable: {
+        '/v4/api': {//需要匹配的路径
+                    target: 'http://m.maizuo.com', //需要代理的目标服务器
+            　　　　 changeOrigin: true, //开启代理
+             　　　　pathRewrite: { '^/v4/api': '/v4/api' }  //这里重写路径/run就代理到对应地址
+            　　}
+
+    },
+
+
+
+常见的跨域手段：
+	1.JSONP
+	2.反向代理
+	3.CORS（后端）
+	设定response.header("Access-Control-Allow-Origin", "*"); 
+
+--------------------------------------------------
+灾难备份
+数据中心。
+距离1000公里以上
+
+2.0.1
+2.0.2
+2.1
+
+webIDE:网页开发工具
+https://codepen.io/
+
+QA:质量保证部门

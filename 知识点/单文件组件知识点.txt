@@ -1,0 +1,52 @@
+﻿1. 单文件组件
+
+	(1)单文件组件介绍 .vue
+		/*
+		a.
+		<template>
+			html代码
+		</template>	
+		<script>
+			js代码
+		</script>
+		<style>
+			css代码
+		</style>
+		b.
+		<template>
+	  		html代码
+		</template>
+		<script src="相对路径的外部的js"></script>
+		<style src="相对路径的外部的css"></style>
+
+		 */
+
+	(2)vue-cli引入
+		npm install -g vue-cli
+
+
+		*vue init webpack-simple my-project
+		*vue init webpack my-project
+
+		*npm run dev 开发环境构建
+		*npm run build 生产环境构建
+	(3)单文件使用方法讲解
+
+		*<template> -html代码,最多可以包含一个
+		*<script> -js代码,最多可以包含一个
+		*<style>- css代码。可以包含多个，src的路径是相对的
+			style标签 加上scoped属性，css局部生效
+			style标签 加上lang="scss"，支持scss
+
+		*自动处理图片路(相对路径) - vue
+		* ES6的模块化导入导出
+		
+	(4)
+		vue-router: 路由
+		ESLint :代码检测工具，使用它可以避免低级错误和统一代码的风格. 两个空格与tab大战
+			*可以关闭
+		Karma + Mocha :单元测试，保证代码质量
+		Nightwatch:端到端测试(功能测试)，站在用户视角，功能测试，而非代码细节，比如表单、动画、页面跳转、dom渲染、Ajax等		
+
+
+
