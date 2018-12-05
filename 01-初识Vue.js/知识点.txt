@@ -1,0 +1,28 @@
+﻿1.初识vue.js 2.*
+
+(1)Vue.js是什么
+	构建数据驱动的web应用开发框架
+
+(2)为什么如此受欢迎？
+	-声明式渲染， 应对前后端分离的大趋势
+	-渐进式框架， 适应各种业务需求以及场景
+	-快速交付，结合第三方UI框架
+	-企业需求，必备技能
+
+(3)MVC,MVP,MVVM 架构模型对比
+
+	"MVC":Controller 薄，View 厚，业务逻辑大都部署在 View。
+			- model view controller
+
+	"MVVM":双向数据绑定，View的变动，映射在 ViewModel，反之一样
+	        - model view viewmodel
+	        
+	"MVP":View 薄，不部署任何业务逻辑，称为"被动视图" (Passive View)
+		  Presenter 厚，逻辑都部署这里。
+		  	- model view presenter
+(4)对比其他框架(angular,react)
+
+
+2. 开发环境搭建(Vue.js 2.*)
+
+	声明式渲染=>组件系统=>路由机制=>状态管理=>...

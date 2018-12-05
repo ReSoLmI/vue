@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+
+<script type="text/javascript" src="lib/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+
+<!--        <div v-model="dwa">
+         
+       </div> -->
+       <input type="text" v-model="mytext"/>
+
+        {{mytext}}
+
+
+        <textarea v-model="mytext"></textarea>
+
+
+       <p><input type="checkbox" v-model="isChecked"/> 记住用户名</p>
+       {{isChecked}}
+
+
+
+       <!-- 设置value值 -->
+       <p><input type="checkbox" v-model="checkedgroup" value="react"  />react</p>
+       <p><input type="checkbox" v-model="checkedgroup" value="vue"/>vue</p>
+       <p><input type="checkbox" v-model="checkedgroup" value="jquery"/>jquery</p>
+
+       {{checkedgroup}}
+
+
+      
+       <p>
+          react: <input type="radio" value="react" v-model="picked"/> 
+       </p>
+        <p>
+          vue: <input type="radio" value="vue" v-model="picked"/>
+       </p>
+       <p>
+          jquery: <input type="radio" value="jquery" v-model="picked"/>
+       </p>
+
+       {{picked}} 
+    </div>
+
+    <!-- <div v-model=""></div> -->
+
+    <script type="text/javascript">
+    	
+    	var vm = new Vue({
+    		el:"#box",
+
+    		data:{
+              name:"xiaoming",
+              mytext:"11111",
+              isChecked:true,
+              checkedgroup:["react"],
+              picked:"vue"
+    		}
+    	})
+    </script>
+</body>
+</html>

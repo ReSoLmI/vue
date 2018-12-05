@@ -1,0 +1,5 @@
+﻿1. 条件渲染
+	(1)v-if
+	(2)v-else
+	(3)template v-if ,包装元素template 不会被创建
+	(4)v-show

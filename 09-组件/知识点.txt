@@ -1,0 +1,53 @@
+﻿1. 组件
+
+ 	(1)什么是组件
+ 		扩展 HTML 元素，封装可重用的代码
+ 	(2)使用组件 
+ 		a.全局组件
+ 			Vue.component
+ 		b.局部组件
+ 		c.data必须是函数
+ 		d.注意
+	 		*自定义组件需要有一个root element
+	 		*父子组件的data是无法共享
+	 		*组件可以有data，methods,computed....,但是data 必须是一个函数。
+ 		e. 父子组件的通信，props down, events up
+ 	(3)prop
+ 		a. prop传递数据 props:["name"]
+ 		b. 单向数据流,当父组件的属性变化时，将传导给子组件，(注意主动)
+ 		但是反过来不会。这是为了防止子组件无意间修改了父组件的状态，来避免应用的数据流变得难以理解。
+ 			*不要在子组件修改prop-单向数据流
+
+        c. 动态属性  show="true"  :show = "true"
+
+ 		d. prop验证 props:{name:Number} Number,String,Boolean,Array,Object,Function,
+
+ 	(4)自定义事件
+ 		a.使用 $on(eventName) 监听事件
+		  使用 $emit(eventName) 触发事件
+
+		b. v-model 父子通信
+			props:["value"];
+			this.$emit("input","***");
+
+		c. 非父子通信
+			- 中央事件总线 bus = new Vue();
+				* mounted生命周期中进行监听
+			- vuex 状态管理
+ 	(5)使用slot内容分发
+ 		a. 单个slot
+ 		b. 具名slot
+ 		// 插槽 ,内容分发
+ 		*混合父组件的内容与子组件自己的模板-->内容分发
+ 		*父组件模板的内容在父组件作用域内编译；子组件模板的内容在子组件作用域内编译。
+
+
+ 	(6)动态组件
+ 		*<component> 元素，动态地绑定多个组件到它的 is 属性
+ 		*<keep-alive> 保留状态，避免重新渲染
+
+
+    组件钩子函数？
+    组件生命周期？ mounted
+    组件生命周期的钩子函数？
+    https://cn.vuejs.org/v2/guide/instance.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%9B%BE%E7%A4%BA

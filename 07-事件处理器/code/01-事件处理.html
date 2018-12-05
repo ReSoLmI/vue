@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+
+<script type="text/javascript" src="lib/vue.js"></script>
+</head>
+<body>
+    <div id="box" >
+        <p>{{count}}</p>
+      
+        <button @click="handleClick()">add</button>
+        <button @click="handleClick2">add2</button>
+
+        <button @click="count++">add3</button>
+
+
+        <button @click="isShow= !isShow">show/hide</button>
+
+        <div v-show="isShow">
+            111111111111
+        </div>
+
+
+
+        <ul @click.self="handleUlClick()">
+            <li @click="handleLiClick($event)">1111</li>
+            <li @click.once="hadnleonce">2222</li>
+            <li >3333</li>
+        </ul>
+
+
+        <a href="http://www.baidu.com" @click.prevent="handleChange">点击跳转</a>
+
+
+        <input type="text" @keyup.13 = "handleKeyup"/>
+    </div>
+
+    <script type="text/javascript">
+    	var vm = new Vue({
+            el:"#box",
+            data:{
+                count:1,
+                isShow:false
+            },
+
+            methods:{
+                handleClick(){
+                    this.count++;
+                },
+
+                handleClick2(ev){
+                    console.log(ev); //ev事件对象
+                    this.count++;
+                },
+
+                handleLiClick(ev){
+                    console.log(ev)
+                    console.log("li click");
+                },
+
+                handleUlClick(){
+                    console.log("ul click");
+                },
+
+                handleChange(){
+                    console.log("handlechange");
+                },
+
+                hadnleonce(){
+                    console.log("once");
+                },
+
+                handleKeyup(ev){
+
+                    // if(ev.keyCode==13){
+                    //     console.log("keyup",ev.keyCode);// todolist .
+                    // }
+                    console.log("enter");
+                }
+            }
+
+            
+        })
+    	
+    </script>
+
+
+    <script>
+        
+
+        // .stop
+        // .prevent
+        // .capture
+        // .self
+        // .once
+        // .passive
+
+
+        // obox.addEventListener('click',function(){
+
+        // },true);
+
+    </script>
+</body>
+</html>

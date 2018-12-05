@@ -1,0 +1,11 @@
+﻿1. class与style绑定
+
+	(1)绑定HTML Class
+		-对象语法
+		-数组语法
+
+	(2)绑定内联样式
+		-对象语法
+		-数组语法
+		
+		//需要将 font-size =>fontSize

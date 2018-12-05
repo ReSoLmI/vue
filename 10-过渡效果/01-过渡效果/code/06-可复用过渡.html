@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+
+<script type="text/javascript" src="lib/vue.js"></script>
+
+<style>
+    .bounce-enter-active {
+      animation: bounce-in 1.5s;
+    }
+    .bounce-leave-active {
+      animation: bounce-in 1.5s reverse;
+    }
+    @keyframes bounce-in {
+      0% {
+        transform:translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform:translateX(0px);
+        opacity: 1;
+      }
+    }
+
+
+    ul{
+      width: 50%;
+      background-color: black;
+      color: white;
+    }
+</style>
+</head>
+<body>
+   
+    <div id="box">
+        <navbar @kerwinevent="isShow=!isShow"></navbar>
+
+
+        <sidebar :myshow="isShow" @kerwinevent="isShow=false">
+          
+                  <li>首页</li>
+                  <li>电影</li>
+                  <li>卖座卡</li>
+
+        </sidebar>
+    </div>
+
+    <script type="text/javascript">
+      
+      
+        var navbar = {
+          template:`
+            <div>
+            <button @click="handleClick()">navbar button</button>
+            navbar</div>
+          `,
+
+          methods:{
+            handleClick(){
+              //触发 kerwinenvent事件
+              this.$emit("kerwinevent");
+            }
+          }
+        }
+
+
+        var sidebar = {
+          template:`
+            <transition name="bounce">
+                <ul @click="handleClick()" v-show="myshow">
+                  <slot></slot>
+                </ul>
+            </transition>
+          `,
+
+
+          props:["myshow"],
+
+          methods:{
+            handleClick(){
+               this.$emit("kerwinevent");
+            }
+          }
+        }
+
+        new Vue({
+          el:"#box",
+
+          data:{
+            isShow:false
+          },
+
+          components:{
+            navbar,
+            sidebar
+          }
+        })
+
+
+    </script>
+</body>
+</html>

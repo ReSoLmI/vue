@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+    
+    .active{
+        /*background-color: red;*/
+        text-decoration: line-through;
+    }
+
+
+</style>
+<script type="text/javascript" src="lib/vue.js"></script>
+</head>
+<body>
+    
+   	<div id="box">
+   		<input type="text" v-model="mytext" @keyup.13="handleKeyUp"/>
+   		<button @click="handleClick()">add</button>
+      <h2>未完成</h2>
+   		<ul>
+   			<li v-for="data,index in uncompletedatalist">
+            <input type="checkbox" :checked="data.isMarked" @change="handleChange($event,data)"/>
+            <span :class="data.isMarked?'active':''"> {{data.text}}</span>
+
+            <button @click="handleDelClick(index)">del</button>
+        </li>
+   		</ul>
+      <h2>已完成</h2>
+        <ul>
+        <li v-for="data,index in completedatalist">
+            <input type="checkbox" :checked="data.isMarked" @change="handleChange($event,data)"/>
+            <span :class="data.isMarked?'active':''"> {{data.text}}</span>
+
+            <button @click="handleDelClick(index)">del</button>
+        </li>
+      </ul>
+   	</div>
+
+   <script type="text/javascript">
+
+  		var vm = new Vue({
+        el:"#box",
+        data:{
+          datalist:[],
+
+          mytext:""
+        },
+
+        methods:{
+          handleClick(){
+            this.datalist.push({
+              isMarked:false,
+              text:this.mytext
+            });
+          },
+
+          handleDelClick(index){
+            this.datalist.splice(index,1);
+          },
+
+          handleChange(ev,data){
+            console.log(ev.target.checked);
+
+            data.isMarked =ev.target.checked;
+          }
+        },
+
+        computed:{
+          uncompletedatalist(){
+            return this.datalist.filter(item=>!item.isMarked)
+          },
+           completedatalist(){
+            return this.datalist.filter(item=>item.isMarked)
+          }
+        }
+      })
+   	  
+   </script>
+</body>
+</html>

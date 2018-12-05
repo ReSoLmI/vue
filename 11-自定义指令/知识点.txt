@@ -1,0 +1,21 @@
+﻿1. 自定义指令 - 对纯 DOM 元素进行底层操作
+	(1)自定义指令介绍 directives
+	(2)钩子函数 
+		* 参数 el,binding,vnode(vnode.context)
+		* bind,inserted,update,componentUpdated,unbind
+
+	(3)函数简写
+	(4)对象字面量-{  传的值 封装在 对象 传过去}
+
+2. 轮播
+	*inserted 插入最后一个元素时调用(vnode.context.datalist.length-1)
+
+	*this.$nextTick()
+
+    （1）updated生命周期中初始化 swiper
+     (2) 自定义指令
+     (3) this.$nextTick
+     (4) 自定义轮播组件
+     		a. 自己封装的组件中 updated
+     		b. 自己封装的组件再重新创建一次 - 改变key
+

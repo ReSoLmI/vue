@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="lib/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+
+       {{name.substring(0,1).toUpperCase()+name.substring(1)}}
+
+
+       <div>
+           {{changeKerwinWord}}
+       </div>
+
+       <div>
+           {{changeKerwinWord}}
+       </div>
+
+       <div>
+           {{changeKerwinWordMethod()}}
+       </div>
+
+        <div>
+           {{changeKerwinWordMethod()}}
+       </div>
+    </div>	
+
+    <script type="text/javascript">
+    	
+    	var vm = new Vue({
+            el:"#box",
+            data:{
+                name:"adwadw dwad a 43232"
+            },
+
+            computed:{
+                //对于任何复杂逻辑，你都应当使用计算属性,不要放在模板中。
+                //属性 ， 定义的是方法 ， 就是方法的返回值
+                
+
+
+                // 在计算属性的状态发生改变， 计算属性 也会重新计算遍
+                changeKerwinWord:function(){
+                    // 做好属性
+                    console.log("computed")
+                    return this.name.substring(0,1).toUpperCase()+this.name.substring(1)
+                }
+            },
+
+            methods:{
+                changeKerwinWordMethod:function(){
+                    // 做好属性
+                    console.log("method")
+                    return this.name.substring(0,1).toUpperCase()+this.name.substring(1)
+                }
+            }
+           
+        })
+    </script>
+</body>
+</html>

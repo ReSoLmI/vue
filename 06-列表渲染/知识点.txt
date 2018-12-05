@@ -1,0 +1,26 @@
+﻿1.	列表渲染
+	(1)v-for  (特殊 v-for="n in 10")
+		a. in 
+		b. of
+	(2)key：
+		*跟踪每个节点的身份，从而重用和重新排序现有元素
+		*理想的 key 值是每项都有的且唯一的 id。data.id
+			-react 虚拟dom 对比,diff 
+	(3)数组更新检测 
+		a. 使用以下方法操作数组，可以检测变动
+	    push() pop() shift() unshift() splice() sort() reverse()
+
+	    b. filter(), concat() 和 slice() ,map(),新数组替换旧数组
+
+	    c. 不能检测以下变动的数组
+
+	    	vm.items[indexOfItem] = newValue
+	    	*解决*  (1)Vue.set(example1.items, indexOfItem, newValue)
+	    			(2)splice
+	(4)应用:显示过滤结果
+		-使用计算属性
+
+
+
+
+
