@@ -1,0 +1,21 @@
+﻿1. 使用第三方插件
+	
+	"https://github.com/vuejs/awesome-vue#components--libraries"
+	集合了来自社区贡献的数以千计的插件和库。
+
+2. 使用第三方UI框架
+
+	饿了么UED团队推出的vue 前端框架：
+
+	(1)PC框架：(element UI)
+	http://element.eleme.io/#/
+	https://github.com/ElemeFE/element
+
+
+	(2)移动端框架：(mint UI)
+	http://mint-ui.github.io/#!/zh-cn
+	https://github.com/ElemeFE/mint-ui
+
+
+
+
